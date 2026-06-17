@@ -20,3 +20,4 @@ def pregunta_06():
     resultado = sorted([valor.upper() for valor in unicos])
     
     return resultado
+    
