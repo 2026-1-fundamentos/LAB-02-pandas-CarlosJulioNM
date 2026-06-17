@@ -1,10 +1,4 @@
-"""
-Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
-datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
-`tbl2.tsv`. En este laboratorio solo puede utilizar las funciones y 
-librerias de pandas para resolver las preguntas.
-"""
-
+import pandas as pd
 
 def pregunta_07():
     """
@@ -20,3 +14,10 @@ def pregunta_07():
     E    67
     Name: c2, dtype: int64
     """
+    # Cargamos el DataFrame
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
+    
+    # Agrupamos por 'c1', seleccionamos 'c2' y calculamos la suma (sum)
+    suma_total = df.groupby("c1")["c2"].sum()
+    
+    return suma_total
